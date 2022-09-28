@@ -1,5 +1,5 @@
-datasource postgres {
-  provider = "postgresql"
+datasource mysql {
+  provider = "mysql"
   url      = env("DB_URL")
 }
 
@@ -35,4 +35,11 @@ model Event {
   id         String    @id @default(cuid())
   name       String?
   updatedAt  DateTime  @updatedAt
+}
+
+model Log {
+  createdAt DateTime  @default(now())
+  date      DateTime?
+  id        String    @id @default(cuid())
+  updatedAt DateTime  @updatedAt
 }
