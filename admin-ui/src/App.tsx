@@ -17,6 +17,10 @@ import { EventList } from "./event/EventList";
 import { EventCreate } from "./event/EventCreate";
 import { EventEdit } from "./event/EventEdit";
 import { EventShow } from "./event/EventShow";
+import { LogList } from "./log/LogList";
+import { LogCreate } from "./log/LogCreate";
+import { LogEdit } from "./log/LogEdit";
+import { LogShow } from "./log/LogShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -63,6 +67,13 @@ const App = (): React.ReactElement => {
           edit={EventEdit}
           create={EventCreate}
           show={EventShow}
+        />
+        <Resource
+          name="Log"
+          list={LogList}
+          edit={LogEdit}
+          create={LogCreate}
+          show={LogShow}
         />
       </Admin>
     </div>
